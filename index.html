@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>녹아내리는 미뉴미</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <img id="img" src="./img/1.png">
+    <button class="btn btn-success" onclick="prev()">prev</button>
+    <button class="btn btn-primary" onclick="next()">next</button>
+</body>
+<script>
+    var curIdx = 0;
+    const images = ["./img/1.png","./img/2.png","./img/3.png"]
+    const image = document.getElementById("img");
+
+    const next = ()=>{
+        if(curIdx>=2){
+            curIdx=0;
+        }
+        else{
+            curIdx+=1;
+        }
+        image.src=images[curIdx];
+    }
+    const prev = ()=>{
+        if(curIdx<=0){
+            curIdx=2;
+        }
+        else{
+            curIdx-=1;
+        }
+        image.src=images[curIdx];
+    }
+</script>
+</html>
